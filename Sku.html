@@ -30,7 +30,6 @@
 </head>
 
 
-
 <body style="display: block;">
 
     <!-- 动态背景 -->
@@ -261,6 +260,9 @@
                 <input type="text" class="lj_srk_wzid" placeholder="网址路径 / 本地路径 (必填)">
                 <input type="text" class="lj_srk_xzid" placeholder="下载路径">
                 <div class="jl_qrk">添加<span class="jl_qrk_fh">↵</span></div>
+                <i class="iconfont icon-fuzhi lj_xg_tj_bdtj" style="display: none;">
+                    <div class="lj_xg_tj_bdtj_wz">匹配添加已有链接</div>
+                </i>
             </div>
 
             <!-- 创建注册表 -->
@@ -401,13 +403,19 @@
 
                 <!-- 主题风格  -->
                 <div class="shezhi_ym shezhi_ztfg_ym">
-                    <div class="shezhi_ym_top"><i class="iconfont icon-fanhui1 i_fanhui_tp"></i>主题风格 ( 部分内容需要刷新生效 )</div>
-                    <div class="ztfg_s ztfg1">月光琉璃</div>
-                    <div class="ztfg_s ztfg2">雅致白绸</div>
-                    <div class="ztfg_s ztfg3">丝绸粉霞</div>
-                    <div class="ztfg_s ztfg4">寂静之章</div>
-                    <div class="ztfg_s ztfg5">阳光米色</div>
-                    <div class="ztfg_s ztfg6">待发布...</div>
+                    <div class="shezhi_ym_top"><i class="iconfont icon-fanhui1 i_fanhui_tp"></i>主题风格 ( 点击应用 / 右击删除 ) ( 部分内容需要刷新生效 )</div>
+                    <div class="dqzttj">保存当前风格</div>
+                    <!-- 下上 -->
+                    <div class="bizhi_gundon bizhi_gundon6">↓</div>
+                    <div class="shezhi_ym_max">
+
+                    </div>
+
+                    <!-- 添加页面 -->
+                    <div class="ztfg_tj_ym" style="display:none;">
+                        <input type="text" placeholder="名字" maxlength="4" class="ztfg_tj_ym_name">
+                        <div class="ztfg_tj_ym_qr">➤</div>
+                    </div>
                 </div>
 
                 <!-- 天气 -->
@@ -581,7 +589,7 @@
                     </div>
                     <div class="lszcb_yjxz">一键合并下载</div>
                     <div class="lszcb_yjsc">一键合并删除</div>
-                    <div class="lszcb_yjqk">清空历史</div>
+                    <div class="lszcb_yjqk" style="display: none;">清空历史</div>
                 </div>
 
                 <!-- 历史搜索记录 -->
@@ -752,6 +760,5 @@
     <audio class="sku_tsy" src="https://img.tukuppt.com/newpreview_music/09/04/07/5c8b02776d58965550.mp3"></audio>
 
 </body>
-
 
 </html>
