@@ -1,0 +1,141 @@
+header    定义文档的头部区域
+footer     定义文档的尾部区域
+section   定义文档的中间区域
+aside      定义页面的侧边栏内容
+article    定义页面独立内容区域
+nav        定义导航链接部分 一般跟ul li一起使用
+vidao   定义视频
+audio   定义音频
+canvas  定义图形
+datalist  定义可选数据  <datalist id="list"><datalist>
+time     定义时间日期
+mark    突出文字
+progress  进度条
+新增的属性
+contenteditable  允许用户编辑内容 true 允许  
+false不允许
+designMode  整个页面是否可编辑 on  off
+hidden  隐藏  overflow:hidden
+spellcheck 是否必须对元素进行拼写或语法检查
+tabindex  规定元素tab键的移动顺序
+
+
+css3
+p:first-of-type:第一个p元素
+p:last-of-type:最后一个p元素
+first-child
+last-child
+nth-child
+before
+after
+
+
+<input type="text">  文本域
+<input type="radio"> 单选 
+<input type="checkbox"> 复选框
+<select></select>  下拉菜单
+<input type="password">  密码
+<input type="submit">  提交
+<input type="button"> 普通按钮
+<input type="image"> 图片形式提交按钮
+<input type="hidden"> 隐藏域  不显示
+<input typr="reset">   清除表中的所有数据
+<input type="file">   用于文件上传 
+
+html5新增的内容
+email 电子邮件地址文本框  提交表单时会自动验证email值
+由数字  字符 +字母 构成 @163.com
+url 网页的url 提交时会自动验证url值
+number 只能录入数字
+range 特定范围内的数字选择器  以滑块的形式呈现
+search  用于搜索引起的搜索框
+Datepicker  用于多个可供选取日期的新输入类型
+date:年月日
+month:年 月
+week:表示的是第几周
+time：时间
+datetime:年月日 时间
+datetime-local :本地的年月日 时间
+
+html5新增的input属性
+
+autofocus  页面加载时自动获得焦点
+required 规定输入不能为空
+placeholder  提供一种提示 输入为空时显示  输入数据后消失
+<script>
+	function name_Focus(){
+		var msg=document.getElementById("name").value;
+		if(msg="手机号/用户名/邮箱"){
+			document.getElementById("name").value="";
+			document.getElementById("name").style.color="black";
+		}
+	}
+	function name_Blur(){
+		var msg=document.getElementById("name").value;
+		if(mag="")
+			{
+				document.getElementById("name").value="手机号/用户名/邮箱";
+				document.getElementById("name").style.color="#ccc";
+			}
+	}
+	</script>
+	<style>
+		#name={color:#ccc;}
+		</style>
+<form action="">
+    <input onfocus="name_Focus()" onblur="name_Blur()" type="text" value="手机号/用户名/邮箱" id="name" name="name">
+    <input type="submit" value="提交">
+    </form>	
+	<br>
+	<form action="">
+		<input type="text" name="name" placeholder="手机号/用户名/邮箱">
+	</form>
+pattern 规定验证域的模式 （正则表达式）
+height  width   image类型的input 标签的图像的高度和宽度
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

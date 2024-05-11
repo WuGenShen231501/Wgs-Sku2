@@ -1,0 +1,16 @@
+1.定义一个变量
+var 变量名；
+2.定义多个变量
+var 变量名1,变量名2,...;
+3.定义变量并赋值
+(1)var 变量名=值；
+(2)var 变量名=值,变量名1=值1；
+(3)var 变量名；变量名=值；
+4.Boolean
+true:>=1,有内容的字符串
+false:null,undefined,0,空字符串
+5.Number
+NaN:undefined,有内容的字符串
+0:false,null,空字符串
+最大值:Number.MAX_VALUE
+最小值:Number.MIN_VALUE
