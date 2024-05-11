@@ -1,0 +1,11 @@
+CSS背景属性：
+background-color 背景颜色：颜色
+background-image 背景图片：url(图片路径)、
+background-repeat 背景平铺：repeat 重复、no-repeat 不重复、
+background-position 背景位置：数字px（x） 数字px（y）、center 居中、
+background-attachment 背景固定：scroll 滚动（默认）、fixed 固定、
+background-size 背景尺寸：cover 封面 contain 扩展至最大尺寸、
+background: linear-gradient（方向 方向，颜色 百分比位置，颜色 百分比位置， ...）背景线性渐变：bottom、top、left、right
+opacity 背景图片透明度：数字；
+
+

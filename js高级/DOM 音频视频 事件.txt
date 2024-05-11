@@ -1,0 +1,15 @@
+事件:
+ended：当音乐播放完触发
+canplay：当浏览器加载完可以开始播放音频/视频时触发
+ontimeupdate：当音频的播放位置改变时
+
+获取特殊属性：
+duration：总时间
+currentTime：播放时的当前时间
+volume：音量（0~1）
+
+方法：
+play()：播放
+pause()：暂停
+webkitrequirestfullscreen()：全屏
+

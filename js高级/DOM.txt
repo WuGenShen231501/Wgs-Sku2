@@ -1,0 +1,354 @@
+什么是：DOM
+DOM：文档对象模型( Document Object Model ,简称DOM )，是W3C组织推荐的处理可扩展标记语言( HTML 或者 XML )的 标准编程接口。
+
+
+
+1、DOM 树
+
+document 文档：一个页面就是一个文档, DOM 中使用 document 表示
+element 元素：页面中的所有标签都是元素，DOM 中使用 element 表示
+node 节点：网页中的所有内容都是节点(标签、属性、文本、注释等) , DOM中使用node表示
+
+DOM 把以上内容都看做是 对象
+
+
+
+2、获取元素
+
+2.1、
+根据 ID 获取
+
+使用：getElementByld（）         get 获得，element 元素，by 通过（驼峰命名法）
+如：
+var timer = document.getElementById('time') ;               // 参数 id 是个大小写敏感的字符串，所以要加‘’
+console.log(timer);                                                        //输出：id 为 time 的元素对象
+console.log(typeof timer);                                             //输出：object（返回的是一个元素对象）
+console.dir(timer);                                                         //console.dir 可以打印我们返回的元素对象更好的查看里面的属性和方法
+
+2.2、
+根据标签名获取
+
+使用方法1：getElementsByTagName（）             get 获得，elements 多个元素，by 通过，tag 标签，name 标签的名字
+如：
+var lis = document.getElementsByTagName('li');
+console.log(lis);                             //返回的是 对象的集合（伪数组）
+console.log(lis[0]);                        //输出：第一个元素对象
+
+注意：
+1、因为得到的是一个对象的集合,所以我们想要操作里面的元素就需要遍历。
+2、得到元素对象是动态的
+3、如果页面中只有一个li返回的还是伪数组的形式
+4、如果页面中没有这个元素返回的空的伪数组的形式
+
+使用方法2：element.getElementsByTagName ('标签名');           可以获取某个父元素的子元素
+如：
+var ol = document.getElementsByTagName('ol');
+var li = ol[0].getElementsByTagName('li');
+console.log(li);
+
+注意：
+1、父元素必须是单个对象(必须指明是哪一个元素对象). 获取的时候不包括父元素自己
+
+2.3、
+通过类名获取（html5 新增的方法）
+
+使用：getElementsByClassName （）      get 获得，elements 多个元素，by 通过，class 类，name 类的名字
+
+提示：和 根据标签名获取 差不多一样
+
+2.4、
+通过指定选择器获取（只能获取第一个元素对象）（html5 新增的方法）
+
+使用：querySelector（）
+
+2.5、
+通过指定选择器获取所有元素（html5 新增的方法）
+
+使用：querySelectorAll（）
+如：
+var allbox = document.querySelectorAll('.ol');          //等于： var allbox = document.getElementsByClassName('ol'); 
+var allbox = document.querySelectorAll('#box');        //等于：  var allbox = document.getElementByld('box');
+
+2.6、
+获取特殊元素
+
+获取 body 元素
+方法：document.body
+
+获取 html 元素
+方法：document.documentElement
+
+
+
+3、事件概述
+
+事件三要素：事件源 ，事件类型， 事件处理程序
+事件源：比如 按钮
+事件类型：比如 鼠标点击（onclick）
+事件处理程序：通过函数赋值的方式完成
+
+如：
+var div = document.querySelector('div');
+div.onclick = function() {
+   console.log('我爱你');
+}
+
+事件类型如下：
+onclick：鼠标点击左键触发
+onmouseover：鼠标经过触发 （会冒泡）
+onmouseenter：鼠标经过触发 （不会冒泡）
+onmouseout：鼠标离开触发 (会冒泡)
+onuseleave：鼠标离开触发 （不会冒泡）
+onfocus：获得鼠标焦点触发
+onblur：失去鼠标焦点触发
+onmousemove：鼠标移动触发
+onmouseup：鼠标弹起触发
+onmousedown：鼠标按下触发
+oncontextmenu：鼠标右键按下触发
+contextmenu：鼠标右键、主要控制应该何时显示上下文菜单,主要用于程序员取消默认的上下文菜单
+
+onchange：发生改变时触发，比如选择框的真与假
+oninput：value值发生变化时就会触发
+
+selectstart：开始选中、主要用于禁止鼠标选中
+
+onkeyup：某个键盘按键被松开时触发
+onkeydown：某个键盘按键被按下时触发，一直按一直触发
+onkeypress：某个键盘按键被按下时触发，但不识别功能按键，如：ctel 、shift
+
+onreadystatechange：当加载页面发生改变时触发
+ODMContentLoaded：仅当DOM加载完成触发、不包括 css样式、不包括 图片、不包括 flash     //  用与图片多时，不然要 window 的 onload 对象事件 
+transitionend：监听过渡完成的事件，也就是当 transition 结束后触发
+
+onscroll：滚动条在滚动时触发
+
+注意：想自动使用事件时可以用：类名.事件()；      // 如：arrow_r.click();
+
+
+
+事件对象：
+onmousedown：鼠标按下触发：e.button           // 左键输出 0，右键输出 2，滚轮输出 1
+
+
+
+4、操作元素
+
+4.1、
+改变元素内容
+
+方法1：elements.innerText（不识别 html 标签，去除标签 和 空格 和 换行）
+如：
+
+方法2：elements.innerHTML（识别 html 标签）（常用）
+如：
+
+4.2、
+改变元素属性
+
+方法：elements.属性 =‘属性值’
+
+4.3、
+样式属性操作  
+
+方法1：elements.style.属性 =‘属性值’
+
+方法2：elements.className = '类名'         （先写好类名的css，再直接把 class 改为他）
+注意： 
+（1）class 因为是个保留字,因此使用 className 来操作元素类名属性
+（2）className 会直接更改元素的类名,会覆盖原先的类名
+
+方法3：elements.classList                       //伪类数组，里面包括了所有class，如 输出第一个类名：elements.classList[0]
+elements.classList.add('类名');                 //追加类名，不覆盖原来的类名
+elements.classList.remove('类名');          //删除指定类名
+elements.classList.toggle('类名');            //判断类名，如果里面没用就添加类名，有就删除类名
+
+4.4、
+获取属性值
+
+方法1：elements.属性                //不能获取自定义属性的属性值
+
+方法2：elements.getAttribute('属性')           get 获取、attribute 属性    //可以获取自定义属性的属性值
+
+4.5、
+设置属性值
+
+方法1：elements.属性 = '值'
+
+方法2：elements.setAttribute('属性','值')     // 主要针对与自定义属性的更改
+注意：class 特殊，setAttribute 这里写的就是 class，不是 className
+
+4.6、
+移除属性
+
+方法：elements.removeAttribute('属性')
+
+4.7、
+排他思想
+
+（1）获取所有按钮元素，获得一个伪数组
+（2）用 for 循环 使每个元素添加事件
+（3）先把所有元素取消背景颜色
+（4）让当前的元素添加背景颜色  
+
+
+
+5、自定义属性
+自定义属性目的:是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。
+
+H5 规定：自定义属性开头用 data-，比如 data-index=""
+
+获取 H5 自定义属性
+（1）elements.setAttribute(‘属性’，‘值’)        // 常用，因为兼容性
+（2）elements.dataset.index                // ie 11 才可以用 、index 为 data- 后面的字符
+（3）elements.dataset['index']             // ie 11 才可以用、index 为 data- 后面的字符
+
+注意：
+dataset 是一个集合，里面存放了所有以 data 开头的自定义属性
+如果自定义属性里面有多个 - 链接的单词，我们获取的时候采取驼峰命名法
+
+
+
+6、节点操作 node
+利用节点层级关系获取元素
+
+一般地 ,节点至少拥有 nodeType (节点类型)、nodeName (节点名称) 和 nodeValue (节点值) 这三个基本属性。
+
+元素节点 nodeType 为 1
+属性节点 nodeType 为 2
+文本节点 nodeType 为 3
+
+也可以用 none.nodeType 来检测节点类型
+
+6.1、
+父级节点
+node.parentNode
+
+如：
+var wgs = document.querySelector('.erweima');
+console.log(wgs.parentNode);               //输出第一个 class 为 erweima 的父级元素
+
+6.2、
+子节点
+node.childNodes     （不常用）
+
+注意：childNodes 获取的是所有的子节点，包含元素节点文本节点等等 ，如果只要元素节点，用 children
+
+获取第一个子节点
+node.firstChild
+
+获取最后一个字节点
+node.lastChild
+
+6.3、
+子元素节点
+node.children          （常用）
+
+注意：children  只获得子节点里的元素节点
+
+获取第一个子元素节点         （ie 9 以上）
+node.firstElementChild
+或:
+node.children[0]
+
+获取最后一个子元素节点     （ie 9 以上）
+node.lastElementChild
+或：
+node.children[node.children.length - 1]
+
+6.4、
+兄弟节点
+
+获取下一个兄弟节点
+node.nextSibling
+
+获取上一个兄弟节点
+node.previousSibling
+
+获取下一个兄弟 元素 节点     （ie 9 以上）
+node.nextElementSibling
+
+获取上一个兄弟 元素 节点    （ie 9 以上）
+node.previousElementSibling
+
+6.5、
+创建节点 和 添加节点
+
+创建元素节点
+document.createElement('tagName')
+
+添加元素节点
+node.appendChild(child)                     // 追加子元素节点
+
+如：
+var li = document.createElement('li');
+var ul = document.querySelector('ul');
+ul.appendChild(li);
+
+添加指定位置元素节点
+node.insertBefore(child，添加到此位置之前的元素)
+
+6.6、
+删除子元素节点
+node.removeChild(child)
+
+6.7、
+复制当前节点
+node.cloneNode()
+
+注意：
+复制完还要添加节点 用 appendChold();
+括号为空或者里面是 false 为 浅拷贝 只复制标签不复制里面的内容
+话号为 true 为 深拷贝 复制标签复制里面的内容
+
+
+
+7、3种动态创建元素区别
+
+7.1、
+document.write()
+
+document.write 是直接将内容写入页面的内容流，但是文档流执行完毕，则它会导致页面全部重绘
+
+7.2、
+elements.innerHTML()
+
+innerHTML 是将内容写入某个 DOM 节点,不会导致页面全部重绘
+innerHTML 创建多个元素效率更高 (不要拼接字符串,采取数组形式拼接) , 结构稍微复杂
+
+7.3、
+document.CreateElement('tagName')
+
+createElement() 创建多个元素效率稍低一点点，但是结构更清晰
+
+
+
+
+
+
+获取元素的所有样式：getComputedStyle(element[,pseudo]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<!--
+图像标签<img src="图像路劲"/>                                           img属性：alt:图像不能显示时的提示文本、  title:鼠标悬停时的提示文本、 align:只有左和右、 width:宽度、 height:高度 《宽高只设置一个的时候，另一个会进行等比放缩》
+绝对路劲：带有盘符的路劲 如D:\网页制作\设计\阿斯顿.png                                                                                                                           : left 左对齐{默认}、 right 右对
+《推测》相对路劲：1、相对于当前网页路劲，图片和网页在同一级时：直接写图像名称
+                              2、图片位于网页的下一级：文件夹/图片名称
+                              3、图片位于网页的上一级：../图片名称
+-->
+<img src="D:\网页制作\设计\wgs\阿斯顿.png"/>
+<img src="wgs/阿斯顿.png"/>
+<img src="../index/pic/.png"/>
+</body>
+</html>

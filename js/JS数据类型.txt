@@ -1,0 +1,86 @@
+数据类型
+JavaScript 是一种弱语言或者说动态语言
+JavaScript 的变量数据类型只有在程序运行过程中，根据等号右边的值来确定的
+JavaScript 拥有动态类型，意味着相同的变量可用作不同的类型
+
+1、简单数据类型
+number ，string，boolean，undefined，null
+
+number： 数字型，包含整数型和浮点型值，如 21 ，0.21 ，                            默认值为 0                  系统显示：蓝色  
+boolean： 布尔值类型，如true，false，等价于 1 和 0 ，                                 默认值为 false             系统显示：蓝色
+string： 字符串类型，如“张三”注意js里面字符串都带引号，                          默认值为“”               系统显示：黑色
+undefined： var a;声明了变量 a 但是没有给值，此时 a=undefined ，             默认值为 undefined     系统显示：灰色
+null： var a =null;声明了变量 a 为空值，                                                        默认值为 null                系统显示：灰色
+
+注意：数字前面加0表示八进制，数字前面加0x表示十六进制
+
+2、复杂数据类型
+object
+
+3、特殊值
+最大值：Number.MAX_VALUE
+最小值：Number.MIN_VALUE
+无穷大：infinite
+无穷小：-infinite
+非数值：NaN
+
+4、转义符
+\n：换行符，n 是 newline 的意思
+\\：斜杆 \
+\'：' 单引号
+\"：" 双引号
+\t：tab 缩进
+\b：空格，b 是 blank 的意思
+
+5、用法
+5.1、
+判断非数字：isNaN（）如果是数字返回 false，不是则返回 true
+如：console.log(isNaN(12));            // false
+       console.log(isNaN(as));            // true
+
+5.2、
+检查字符串长度：length
+如：console.log(变量名.lenght);           // 数字
+
+5.3、
+字符串的拼接：+     （数值相加，字符相连）
+如：console.log('沙漠' + 18);           // 沙漠18
+      console.log(12 + 12);              // 24         
+
+5.4、
+获取检查数据类型：typeof
+如：console.log(typeof 变量名)；    // 数据类型
+       var timer = null; console.log(typeof timer);      // object
+
+（注意：prompt 取过来的值是 字符串 型的） 
+
+5.5、
+数据类型转换：prompt
+
+5.5.1、转换为字符串型
+1、toString()
+如：var 变量名 = 1; alert(变量名.toString());
+2、强制转换：String() 
+如：var 变量名 = 1; alert(String(变量名));
+3、利用 + 拼接方法  （也称：隐式转换）
+如：var 变量名 = 1; alert(变量名 + '');
+
+5.5.2、转换为数字型
+1、parseInt(string) 函数     （取整数、去单位）
+如：var 变量名 = prompt('输入年龄'); console.log(parseInt(变量名));
+2、parseFloat(string) 函数   （可带小数、去单位）
+如：var 变量名 = prompt('输入年龄'); console.log(parseFloat(变量名));
+3、强制转换：Number()
+如：var 变量名 = prompt('输入年龄'); console.log(Number(变量名));
+4、隐式转化：-、*、/
+如：var 变量名 = prompt('输入年龄'); console.log(变量名 - 0);
+
+5.5.3、转化为布尔型
+1、Boolean() 函数
+代表 空、否定 的值会被转化为 false ，如''、0、NaN、null、undefined
+其余值都会被转化为 true
+如：console.log(Boolena(''))   // false
+      console.log(Boolena('小白'))   // true
+ 
+
+ 

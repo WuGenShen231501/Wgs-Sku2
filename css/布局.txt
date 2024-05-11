@@ -1,0 +1,7 @@
+左右布局：justify-content
+
+flex-start：项目与容器的左侧对齐
+flex-end：项目与容器的右侧对齐
+center：项目在容器中心对齐
+space-between：项目之间的间距相等
+space-around：项目周围以相等间距显示

@@ -1,0 +1,47 @@
+表单域标签：<form></form>          属性：《name 表单域的名称、action 数据发送给服务器的路劲、method 数据提交方式：get，post（一般）》
+
+表单控件标签：<input />   属性： 《placeholder 背景提示文字、value 初始值、maxlength 字符最大长度、disabled 不可用、checked 默认选项、name 文本框名称、step 增加值、》
+1、文本框：<input type="text" name="名称"/>                   
+2、密码框：<input type="password" name="名称"/>
+3、提交键：<input type="submit" name="名称" value="登陆"/>
+4、清空键：<input type="reset" name="名称" value="清空"/>
+5、普通键：<input type="button" name="名称" value="点击"/>                                                                                                        属性：onclick="alert('文本')"
+6、单选框：<input type="radio" name="名称" value="男"/>男    
+7、复选框：<input type="checkbox" name="名称" value="音乐"/>音乐            属性：checked 选中状态
+8、电子邮件文本框：	     
+
+整体建表如：
+<body>
+    <form name="f1" action="#" method="post">
+         账号<input type="text" name="t1" placeholder="请输入银行卡账号" maxlength="9" />
+        <br/>
+        密码<input type="password" name="w1" placeholder="请输入QQ密码" />
+        <br/>
+        <input type="submit" name="s1" value="登陆" />
+        <input type="reset" name="r1" value="清空" />
+        <input type="button" name="q1" value="点击" onclick="alert('曾颖涛SB');" />
+        <br/>
+         性别：<input type="radio" name="sex" value="男" checked/>男<input type="radio" name="sex" value="女" />女
+        <br/>
+         爱好:<input type="checkbox" name="hobby1" value="睡觉" />睡觉<input type="checkbox" name="hobby2" value="吃饭" />吃饭
+    </form>
+</body>
+
+文本域：<textarea></textarea> 属性：行 rows、列 cols       //css：resize:none; 去除拉动
+下拉列表：<select>
+                      <option></option>
+                      <option></option>
+                </select>
+
+要修改提示背景颜色需要使用::placeholder
+如：
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+输入时隐藏边框：outline:none;
+
+JS 获得焦点方法：focus（）
+JS 失去焦点方法：blur（）
+
+JS按钮禁用：elements.disabled = false ;

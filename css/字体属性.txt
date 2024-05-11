@@ -1,0 +1,49 @@
+字体属性：
+color 字体颜色：颜色
+
+font-family 字体类型：‘宋体’。。。
+
+font-style 字体风格：italic 斜体、normal 默认、oblique 倾斜、none（无，取消）
+
+font-weight 字体加粗：、100-900（100的倍数）、bold（700）、normal（正常 400）
+
+text-decoration 文本装饰：underline 下划线、overline 上划线、line-through 删除线、none 无
+
+font 综合设置字体：（不能更换顺序，必须保留font-size和font-family属性，其余可省略）顺序：（font：font-style  font-weight  font-size/line-height  font-family）
+
+text-indent 首行缩进：数字em、百分比%
+
+text-align 对齐方式：center 居中（只作用与块级元素）、right：右对齐、left：左对齐(默认值)
+
+width 长：数字px
+
+line-height 行间距(行高)：分别为像素px,相对值em,和百分比%
+
+letter-spacing 字间距：normal 默认、数字
+
+text-shadow 字体阴影：数字px 数字px 数字px 颜色，...;  （第一个值为x轴，第二个为y轴，第三个为模糊半径）
+ 
+cursor 光标：pointer 指针、
+
+background 背景：颜色
+
+border 边框：数字px、solid 实心、transparent 透明
+
+
+字体属性2：hover 鼠标触碰时             使用方法：标签:hover {属性:属性值；属性:属性值}
+background 背景颜色：颜色
+
+color 字体颜色：颜色
+
+
+字体属性3：active 点击时             使用方法：标签:active {属性:属性值；属性:属性值}
+background 背景颜色：颜色
+
+color 字体颜色：颜色
+
+overflow: hidden;         /* 隐藏超出部分的文本 */
+text-overflow: ellipsis;     文本的末尾添加省略号（…）
+white-space: nowrap;            /* 禁止文本换行 */
+
+裁减掉文字以外的背景
+-webkit-background-clip: text;

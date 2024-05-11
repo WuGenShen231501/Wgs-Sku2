@@ -1,0 +1,47 @@
+一、html 5 新标签：
+
+<header></header>定义文档头部
+
+<section></section>定义文档中部（用于带标题的内容区域）
+
+<article></article>定义文档独立部分
+
+<aside></aside>定义文档的侧面内容
+
+<footer></footer>定义section的页脚
+
+<nav></nav>定义导航链接部分（套用列表元素）
+如：
+<nav>
+<ul></ul>
+</nav>
+
+<video></video>定义视频
+
+<audio></audio>定义音频
+
+<time></time>定义日期和时间
+
+<mark></mark>在视觉上向用户显示那些需要突出的文字
+
+<progress></progress>运行中的进度
+如：
+<progress value="50" max="100"></progress>
+
+<datalist></datalist>定义可选数据的列表
+
+<canvas></canvas>定义图形
+
+
+
+二、html 5 新元素：
+
+contentEditable是否允许用户编辑内容
+
+designMode整个页面是否可编辑
+
+hidden：是否对元素进行隐藏
+
+spellcheck：是否必须对元素进行拼写或语法检查
+
+tabindex：规定元素的 tab 键移动顺序

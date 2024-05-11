@@ -1,0 +1,5 @@
+var str = 'sy_djs';
+var str64 = window.btoa(str);
+console.log("字符串是:" + str);
+console.log("经base64编码后:" + str64);
+console.log("base64解码后:" + window.atob(str64));

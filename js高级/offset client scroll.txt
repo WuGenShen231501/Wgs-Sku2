@@ -1,0 +1,56 @@
+1、元素偏移量 offset  系类
+
+offset 翻译过来就是偏移量,我们使用 offset 系列相关属性可以动态的得到该元素的 位置 (偏移)、大小等。
+
+
+1.1、offset 常用属性：
+
+element.offsetParent：返回作为该元素带有定位的父级元素如果父级都没有定位则返回body
+element.offsetTop：返回元素相对带有定位父元素上方的偏移
+element.offsetLeft：返回元素相对带有定位父元素左边框的偏移
+element.offsetWidth：返回自身包括padding、边框、内容区的宽度，返回数值不带单位
+element.offsetHeight：返回自身包括padding、边框、内容区的高度，返回数值不带单位
+
+注意：offset 和 style 的区别
+
+offset
+● offset 可以得到任意样式表中的样式值
+● offset 系列获得的数值是没有单位的
+● offsetWidth 包含 padding+ border +width
+● offsetWidth 等属性是只读属性,只能获取不能赋值        
+● 所以,我们想要获取元素大小位置,用offset更合适 
+
+style
+● style 只能得到行内样式表中的样式值
+● style.width 获得的是带有单位的字符串
+● style.width 获得不包含padding和border的值
+● style.width 是可读写属性,可以获取也可以赋值
+● 所以,我们想要给元素更改值,则需要用style改变
+
+
+
+2、元素可视区 client 系类
+
+
+2.1、client 常用属性：
+
+element.clientTop：返回元素上边框的大小
+element.clientLeft：返回元素左边框的大小
+element.clientWidth：返回自身包括 padding、内容区的宽度， 不含边框，返回数值不带单位
+element.clientHeight：返回自身包括 padding、内容区的高度，不含边框，返回数值不带单位
+
+注意：clientWidth 和我们 offsetWidth 最大的区别就是不包含边框
+
+
+
+3、元素滚动 scroll 系列
+
+
+3.1、scroll 常用属性：
+
+element.scrollTop：返回被卷去的.上侧距离，返回数值不带单位
+element.scrollLeft：返回被卷去的左侧距离，返回数值不带单位
+element.scrollWidth：返回自身实际的宽度，不含边框，返回数值不带单位
+element.scrollHeight：返回自身实际的高度，不含边框，返回数值不带单位
+
+

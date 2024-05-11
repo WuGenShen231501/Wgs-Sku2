@@ -1,0 +1,18 @@
+doctype html 开头设置文本格式是html
+document的缩写为doc
+如：
+
+<!doctype html>
+<html>                                                        网页开始
+  <head>                                                                头开始
+    <mete charset=''utf-8''>                                                            utf-8 全国语言 set设置 char语言
+    <title>网页标题设计</title>
+  </head>                                                               头结尾
+  <body>                                                                         网页内容开始
+  网页<font size="6" color="blue">设计</font>                           size为字号；color为字体颜色
+  <br/>下一行内容                                                                                <br/>为跨行
+  </body>                                                                       网页内容结束                 
+</html>                                                       网页结束
+
+<html>与<head>属于包含关系
+<head>与<body>属于并列关系

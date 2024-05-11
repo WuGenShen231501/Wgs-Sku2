@@ -1,0 +1,191 @@
+
+1、window 对象事件
+
+onload：窗口加载事件     // 当文档内容加载完成时触发该事件，包括 css样式、图片、flash
+onresize：调整窗口大小事件    // 浏览器窗口大小发生变化时触发事件
+onpageshow：窗口显示事件  // 当窗口显示时触发，e.persisted 返回的是 true 就是说如果这个页面是从缓存取过来的页面
+onscroll：窗口滚动事件    // 当浏览器滚动时触发
+onoffline：网络连接中断事件 //当网络断开时触发
+ononline：网络连接恢复事件 //当网络恢复时触发
+
+1.2、页面加载时的状态：document.readystate
+0-UNINITIALIZED：XML 对象被产生，但没有任何文件被加载。 
+1-LOADING：加载程序进行中，但文件尚未开始解析。 
+2-LOADED：部分的文件已经加载且进行解析，但对象模型尚未生效。 
+3-INTERACTIVE：仅对已加载的部分文件有效，在此情况下，对象模型是有效但只读的。 
+4-COMPLETED：文件已完全加载，代表加载成功。 
+
+
+2、window 对象属性
+
+浏览器内容区域长度：window.innerWidth
+浏览器内容区域宽度：window.innerHeight
+页面被卷去的头部：window.pageYOffset （i9以上）
+页面被卷去的左侧：window.pageXOffset （i9以上）
+物理像素比：window.devicePixelRatio
+
+
+
+3、定时器
+
+
+3.1、setTimeout（）
+
+setTimeout 定时器：时间倒计时结束后执行一次函数
+
+使用方法：setTimeout（function（）{}，毫秒）；
+
+如：
+setTimeout( function () {
+   console.log( 'i love you' );
+}, 2000);
+
+或者直接写函数名，如：
+function wgs () {
+   console.log( 'i love you' );
+}
+setTimeout( wgs , 2000);
+
+或者直接写 '函数名()'，如：          // 不提倡
+function wgs () {
+   console.log( 'i love you' );
+}
+setTimeout( "wgs()" , 2000);
+
+注意：setTimeout 这个调用函数我们也称为 回调函数 callback 。
+
+
+3.2、setInterval（）
+
+setInterval 定时器：每次时间倒计时结束后执行一次事件，重复这个函数
+
+使用方法：setTimeout（function（）{}，毫秒）；
+
+
+3.3、定时器标识符
+
+页面中可能有很多的定时器，我们经常给定时器加标识符 (名字)
+
+如：
+var timer1 = setTimeout(函数，毫秒);
+
+
+3.4、停止定时器
+
+停止 setTimeout 定时器：clearTimeout（）
+使用方法：clearTimeout（定时器名字）；
+
+停止 setInterval 定时器：clearInterval（）
+使用方法：clearInterval（定时器名字）；
+
+
+
+4、JS执行队列
+
+JavaScript 语言的一大特点就是单线程,也就是说,同一个时间只能做一件事。
+
+为了解决这个问题,利用多核CPU的计算能力, HTML5提出 Web Worker 标准,允许JavaScript脚本创建多个线程。于是, JS中出现了 同步 和 异步。
+
+
+4.1、同步
+
+前一个任务结束后再执行后一个任务,程序的执行顺序与任务的排列顺序是一致的、 同步的。
+
+ 
+4.2、异步 （现标准）
+
+你在做一件事情时,因为这件事情会花费很长时间,在做这件事的同时,你还可以去处理其他事情。
+
+注意：先执行同步任务，再执行异步任务，一般 回调函数 就是异步任务
+
+
+
+5、location 对象
+
+window 对象给我们提供了一个 location 属性 用于 获取 或 设置窗体的 URL ,并且可以用于解析 URL。
+
+
+5.1、location 对象属性
+
+location.href：获取或者设置整个URL
+location.host：返回主机(域名) www.itheima.com
+location.port：返回端口号，如果未写返回 空字符串
+location.pathname：返回路径
+location.search：返回参数
+location.hash：返回片段 #后面内容常见于链接锚点
+
+
+5.2、location 对象方法
+
+location.assign()：跟 href 一样，可以跳转页面 (也称为重定向页面)
+location.replace()：替换当前页面，因为不记录历史，所以不能后退页面
+location.reload()：重新加载页面，相当于刷新按钮或者 f5 如果参数为 true 强制刷新 ctrl+f5
+
+
+
+6、navigator 对象
+
+navigator 对象包含有关浏览器的信息,它有很多属性,我们最常用的是 userAgent
+
+
+6.1、navigator 对象属性
+
+navigator.userAgent：用户端
+
+
+
+7、history 对象
+
+window 对象给我们提供了一个 history 对象,与浏览器历史记录进行交互。
+
+
+7.1、history 对象方法
+
+history.back()：可以后退功能
+history.foward()：前进功能
+history.go(参数)：前进后退功能，参数如果是1前进1个页面，如果是-1后退1个页面
+
+
+8、scroll 对象方法
+
+window.scroll(x,y);                        // X和Y不要加xp，回到顶部就是 window.scroll(0,0); 
+
+
+9、window.navigator.onLine 网络判断
+
+当断开了网时 window.navigator.onLine == false；
+当连接了网时  window.navigator.onLine == true；
+
+
+10、跳转网页
+
+window.open(NewUrl,'newindow','height=600,width=900,top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no');
+
+说明：
+NewUrl  //' 弹出窗口的地址； 
+'newwindow'   //弹出窗口的名字，非必须，可用空''代替； 
+height=600 //窗口高度； 
+width=900 //窗口宽度； 
+top=0 //窗口距离屏幕上方的象素值； 
+left=0 //窗口距离屏幕左侧的象素值； 
+toolbar=no //是否显示工具栏，yes为显示； 
+menubar，scrollbars //表示菜单栏和滚动栏。 
+resizable=no //是否允许改变窗口大小，yes为允许； 
+location=no //是否显示地址栏，yes为允许； 
+status=no //是否显示状态栏内的信息，yes为允许；　
+
+11、 window 内置方法
+ window.close();    //关闭当前浏览器
+
+
+
+
+
+
+
+
+
+
+
+
+

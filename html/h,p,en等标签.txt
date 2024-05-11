@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>网页标题</title>
+</head>
+<body>
+标题标签
+<!--1.标题标签<h#><h#>#:1~6整数>                                                 对齐方式属性align:left 左对齐{默认}、 right 右对、 center 居中
+<h1>一级标签</h1>
+<h2 align="right"><font color="red">二级标签</font></h2>       此时二级标签为靠右对齐其为红色《h标签只有align属性，所以color不能放在h标签里面》
+<h3>三级标签</h3>
+<h7>无效标签</h7>
+
+<p>段落标签</p>    
+                                                                          
+<strong>加粗标签</strong>
+<b>加粗标签</b>
+
+<em>斜体标签</em>
+<i>斜体标签</i>
+
+<ins>下划线标签</ins>
+<u>下划线标签</u>
+
+<del>删除标签</del>
+<s>删除标签</s>
+
+<!--水平线<hr/>-->
+
+<!--换行<br/>-->
+
+<xmp>原样输出</xmp>
+
+<label> input 元素定义标注 </label>
+
+</body>
+</html>
+
+
+《块级元素》包含《行级元素》
+h标签 和 p标签 都属于《块级元素》
+&nbsp;  为空格符、&lt; 为小于号、&gt; 为大于号、&copy 为版权符号、&sup 为上标签数字符号、&sub 为下标签数字符号

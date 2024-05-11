@@ -1,0 +1,22 @@
+1、 javascript 的组成：
+JavaScript、DOM、BOM
+
+2、引用
+行内：
+<标签名 onclick="指令"> （将JS写在标签里面）
+
+内嵌：
+<head>
+<script>
+指令
+</script>
+</head>	
+
+外部：
+<script src="JS路径"></script>
+
+3、注释
+//单行注释
+/*多行注释*/
+
+注意：在html中我们一般用双引号 “”号， 但在JS中我们一般用单引号‘’，数字可以不加

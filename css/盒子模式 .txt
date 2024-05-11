@@ -1,0 +1,63 @@
+盒子模型
+去除所有自带间隔：* {margin: 0px; padding: 0px; }
+
+设置 内容：
+width 宽：数字px             (计算:calc 如:width(100%-3.8rem))
+height 高：数字px
+等 字体属性、背景属性
+
+设置 边框：border
+border-width 边框像素：数字px，数字px。数字px、数字px（上右下左，顺时针排序，不够时取对面值）
+border-style 边框的样式：solid 实线、dashed 虚线、dotted 点线、double 双线 、
+border-color 边框颜色：颜色 、transparent 透明 、
+border 综合：border-width  border-style  border-color （其中 border-width 不能设多个）
+（注意：一定要设置 border-style 不然无效，综合写时也是一样）
+单独设置像素：border-top 顶部、border-left 左边、border-bottom 底部、border-right 右边
+
+设置 内边距：padding
+padding 内边距：数字px，数字px。数字px、数字px（上右下左，顺时针排序，不够时取对面值）
+
+设置 外边距：margin 
+margin 外边距：数字px （注意：垂直方向上外边距合并）
+
+设置 外部轮廓 outline
+outline: 4px solid red; 
+
+控制盒子大小：box-sizing: border-box;
+
+取消塌陷：overflow: hidden;
+
+边框角弧度：border-radius:px;
+
+盒子光影：box-shadow：数字px 数字px 数字px 数字px 颜色;  （第一个值为x轴，第二个为y轴，第三个为模糊半径，第四个为粗细）
+
+模糊：filter: blur(2px);
+
+毛玻璃背景： backdrop-filter: blur(2px);
+
+溢出盒子部分隐藏：overflow:hidden;
+
+取消大盒子没设高度时被浮动影响：
+.clearfix:after {
+    display: block;
+    content: "";
+    height: 0px;
+    visibility: hidden;
+    clear: both;
+}
+针对老系统加上；
+.clearfix {
+    *zoom: 1;
+}
+
+
+Overflow 的属性：
+
+visible	默认值。内容不会被修剪，会呈现在元素框之外。
+hidden	内容会被修剪，并且其余内容是不可见的。
+scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+inherit	规定应该从父元素继承 overflow 属性的值。
+
+阻止用户产生任何效果/阻止遮挡元素
+pointer-events: none;

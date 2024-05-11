@@ -1,0 +1,12 @@
+变换 transform：
+偏移 translateY或X(数字px); （在浏览器中，X轴向右递增，Y轴向下递增）、
+旋转 rotateY或X(数字deg);
+缩放 scale(数字);              （数字1为不放大不缩小）
+倾斜 skew（数字deg）；
+
+perspective 透视（镜头到物体的距离，一般给）：数字px（一般为800px）
+
+transform-origin 改变转换元素的位置：一般使用 transform-origin: top left;	
+
+transition 过度：数字s、ease 慢快慢变换、linear 匀速变换、ease-in 加速度、ease-out 减速度、ease-in-out 慢开始慢结尾
+pransform-styple:;

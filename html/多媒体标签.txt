@@ -1,0 +1,28 @@
+一、音频标签：<audio></audio>             属性：controls 控制面板 、autoplay 自动播放、loop 循环播放、src（URL）
+
+如：
+<body>
+    <audio src="多媒体/像我这样的人.mp3" controls></audio>
+</body>
+
+
+
+
+二、视频标签：<video></video>             属性：controls 控制面板、autoplay 自动播放、width 宽度（只设置宽度，高度会按百分比自动调整）、height 高度、loop 循环播放、poster 等待画面、muted 静音播放、src（URL）
+
+如：
+<body>
+    <video src="多媒体/pian.mp4" controls width="600">
+</body>
+
+或：
+<body>
+    <video controls width="600">
+         <source src="多媒体/pian.mp4" />
+    </ video>
+</body>
+
+
+
+
+三、自定义视频播放器

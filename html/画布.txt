@@ -1,0 +1,46 @@
+创建画布：
+<canvas id="myCanvas" width="?px" height="?px"></canvas>
+
+JavaScript 使用 id 来寻找 canvas 元素：
+var c=document.getElementById("myCanvas");
+
+然后，创建 context 对象：
+var cxt=c.getContext("2d");                  // getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
+
+
+
+线条：
+
+颜色：strokeStyle="颜色";
+开始路劲：cxt.beginPath();
+起点：cxt.moveTo(X轴坐标，Y轴坐标);
+终点：cxt.lineTo(X轴坐标，Y轴坐标);                 //  可以有多个终点，用于画多边形 或 折线
+关闭路劲：cxt.closePath();
+粗细：cxt.lineWidth = 数字;
+填充颜色:cxt.fillStyle="颜色";
+填充：cxt.fill();
+绘画线条：cxt.stroke();
+
+注意：开始路劲 和 关闭路劲一般用于两个图形分离开来，互不影响
+
+
+
+矩形：
+
+颜色：cxt.fillStyle="颜色";
+大小：cxt.fillRect(0,0,150,75);      // 意思是：在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。
+
+
+
+圆形：
+
+开始路劲：cxt.beginPath();
+路劲：cxt.arc(X轴坐标,Y轴坐标,半径,0,Math.PI*2,true);
+关闭路劲：cxt.closePath();
+填充颜色：cxt.fillStyle="颜色";
+填充：cxt.fill();
+
+
+
+渐变：
+

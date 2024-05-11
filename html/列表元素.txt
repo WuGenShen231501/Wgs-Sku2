@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>列表元素</title>
+</head>
+<body>
+<!--
+列表元素：
+
+1、无序列表<ul></ul>列表的项为<li></li>               属性=项目符号 type：disc 实心圆（默认）、circle 空心圆、square 实心方块
+如下：                                                                         css去除圆点：list-style: none;
+<h1>水果</h1>                                                       <ul><li>都是块级元素
+<ul>                       
+<li>苹果</li>
+<li>草莓</li>             
+<li>樱桃</li>
+</ul>
+
+2、有序列表<ol></ol>列表的项为<li></li>              属性=1、项目符号数字 type：1（默认）、I（大写i） 、i、a、A
+如下：                                                                                 2、起始值 start="1"(默认)   起始值只作用与<ol>标签 且 一定为数字
+<h1>游戏排行榜</h1>                                                       3、 值 value<li>="数字" 
+<ol type="a">                                                                    4 、逆序 reversed="reversed" 可以缩写为 reversed   只作用与<ol>标签
+<li>王者荣耀</li>
+<li type="1">我的世界</li>                             此时，我的世界的排行为2 不是1 （只会改变符号，不会改变顺序）
+<li>植物大战僵尸</li>
+<li>英雄联盟</li>
+</ol>
+
+3、定义列表<dl></dl>   名词/术语
+名词<dt></dt>
+术语解释<dd></dd>
+如下：
+<h2>电脑配件</h2>
+<dl>
+<dt>鼠标</dt>
+<dd>有线鼠标</dd>
+<dd>无线鼠标</dd>
+<dt>键盘</dt>
+<dd>台式机键盘</dd>
+<dd>笔记本电脑键盘</dd>
+</dl>
+
+-->
+</body>
+</html>

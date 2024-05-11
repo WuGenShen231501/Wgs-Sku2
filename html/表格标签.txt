@@ -1,0 +1,26 @@
+表格标签：<table></table>          
+                行<tr></tr>                                       快捷键：tr*3（3个<tr></tr>标签）
+                表头<th></th>
+                单元格<td></td>
+               表格头部<thead></thead>
+               表格主体部分<tbody></tbody>
+
+<table border="9" cellspacing="2" title="测试">                        属性：边境 border="数字"（0为没有）+ solid实心 + 颜色 、单元格间距 cellspacing="数字" （默认为2px，0为没有）、像素 width="数字px"、边框颜色 bordercolor="颜色"、背景颜色 bgcolor="颜色"
+        <caption> 表格标题标签</caption>                                    <caption>标签跟在<table>标签后面           属性：align : bottom （下面）
+<tbody align="center">                               
+        <tr>
+            <th>姓名</th>                                                               表头标签<th>:只能在 第一行，第一列 （自带加粗效果）
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>张三</td>                                                            <td> 属性 ：跨行合并 rowspan="数字"、  跨列合并 colspan="数字" （数字等于需要合并的格数）
+            <td>22</td>
+        </tr>
+        <tr>
+            <td><input type=text /></td>
+            <td><input type=text /></td>
+        </tr>
+</tbody>
+
+合并单元格：1、跨行合并 rowspan
+                    2、跨列合并 colspan 

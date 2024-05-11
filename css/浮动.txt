@@ -1,0 +1,4 @@
+浮动
+ float 浮动：top 向上浮动 、bottom 向下浮动 、right 向左浮动 、left 向右浮动
+
+去除浮动：clear: both;

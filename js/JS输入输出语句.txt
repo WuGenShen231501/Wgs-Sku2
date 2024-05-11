@@ -1,0 +1,71 @@
+prompt(info) 输入框  ：
+
+alert(msg) 警示框：显示给用户的
+
+console.log(msg) 控制台输出：给程序员测试用的
+
+document.write（msg） 网页显示
+
+变量
+
+本质：变量是程序在内存中申请的一块用来存放数据的空间
+
+使用：
+1、声明变量
+var 变量名;            （var 是variable=变量 的缩写）
+
+2、赋值（把值存入变量中）
+= 用来把右边的值赋给左边的变量空间中
+
+3、特殊情况
+声明变量不赋值时使用：undefined 未定义的
+不声明变量也不赋值时使用：报错                       （报错不在执行后面语句）
+不声明直接赋值使用：也可以（全局变量，不怎么使用）
+
+
+4、如下：
+4.1、
+<script>
+var age;              （声明变量）
+age = 18;              （赋值） 
+</script>
+
+4.2、或直接声明变量同时赋值（称：变量的初始化）
+<script>
+var age = 18,
+      address = '',
+      gz = '';
+</script>
+
+4.3、存储 myname 输入后的变量，再提示myname输入后的变量
+<script>
+var myname = propt('请输入你的名字');
+alert(myname);
+</script>
+
+注意：变量名称区分大小写 App 和 app 是两个变量、不能以数字开头、变量名称不能为 var 关键字 其他还有 for，while，if 等
+          变量名尽量不用 name、
+
+5、赋值变色：
+<body>
+    <h1>我会变色</h1>
+    <button onclick="setColor('red')">变为红色</button>
+    <button onclick="setColor('orange')">变为橙色</button>
+    <button onclick="setColor('yellow')">变为黄色</button>
+    <button onclick="setColor('green')">变为曾颖涛色</button>
+    <button onclick="setColor('blue')">变为蓝色</button>
+    <script>
+        function setColor(red) {
+            document.getElementsByTagName('h1')[0].style.color = red;
+        }
+    </script>
+</body>
+
+function 为函数，表示后面开始写函数
+setColor 为函数的名字，随便取
+document 为文本
+get 提取
+TagName 标签名
+[0] 第一个
+style 
+

@@ -1,0 +1,306 @@
+JS 中的对象分为3种：自定义对象、内置对象、浏览器对象
+
+内置对象：就是JS语言自带的一些对象，一些方法和功能
+
+JS给我们提供了多个内置对象：Math（数学对象）、Date（日期对象）、Array（数独）、String（字符串对象）
+
+查阅内置对象的网站：https://developer.mozilla.org/zh-CN/#
+
+
+
+1、Math 对象（数学对象）                       注意：Math 不是一个构造函数
+
+1.1 兀：Math.Pi
+如：
+console.log(Math.Pi);                                   //  3.1415926...
+
+1.2 最大值：Math.max() 
+如：
+console.log(Math.max(1,99,3));                   // 99
+
+1.3 绝对值 Math.abs()
+如：
+console.log(Math.abs(-1));                          // -1
+
+1.4 向下取整 Math.floor()
+如：
+console.log(Math.floor(1.9));                      //   1
+
+1.5 向上取整 Math.ceil()
+如：
+console.log(Math.ceil(1.1));                     //   2
+
+1.6 四舍五入 Math.round()
+如：
+console.log(Math.round(1.4));                // 1
+console.log(Math.round(1.5));                // 2
+console.log(Math.round(-1.5));              // -1   注意：其他数字都是四舍五入，但是 .5 会往大的取   
+
+1.7 随机数 Math.random()     返回随机数范围为 [0,1)
+如：
+console.log(Math.random());           //   0.？ 
+
+如：要求2个数之间的随机数整数，包括这两个数
+function wgs1(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(wgs1(1, 10));                                 //  ?
+
+如：随机点名
+var arr =['吴阿','吴的','吴发','吴棽'];
+function wgs1(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(arr[wgs1(0,arr.length - 1)]);
+
+
+
+2、Date 对象（日期对象）                                  注意：Date 是一个构造函数 必须要用 new
+
+2.1、使用 Date
+var 对象名 = new Date();                             
+console.log(对象名);                                        //  当前时间 
+
+ 注意：参数常用写法 1、数字型：2019，10，01 
+                                2、字符串型：'2019-10-1 13:30:45' （常用）
+
+2.2 单独获取：年 月 日 时 分 秒
+获取当年： getFullYear()
+获取当月：getMonth()                        注意：获取当月（0-11） 比实际小1 因为从0开始计算 记得加 1
+获取当天日期号：getDate()
+获取当天周期：gatDay()                      注意：获得星期几（周日0~周六6）一个星期的开始是星期天
+获取当前小时： getHours()
+获取当前分钟：getMinutes()
+获取当前秒钟：getSeconds()
+
+使用方法：
+var 对象名 = new Date();
+console.log(对象名.get...());
+
+2.3、获取日期的总的毫秒形式（时间戳）
+含义：距离 1970 年 1 月 1 日 过了多少毫秒
+
+方法1：valueOf() 或 getTime()
+var 对象名 = new Date();
+console.log(对象名.valueOf());                //   总毫秒
+console.log(对象名.getTime());               //   总毫秒
+
+方法2：简单写法（常用）
+var 对象名 = +new Date();                      // +new Date 返回的就是总毫秒数
+console.log(对象名)；                             //  总毫秒 
+
+方法3：html5 新增
+console.log(Date.now());                        //  总毫秒
+
+2.4、利用时间戳 计算 倒计时
+计算天数：总秒数/60/60/24
+计算小时：总秒数/60/60%24
+计算分数：总秒数/60%60
+计算秒数：总秒数%60
+
+如：
+function countDown(time){
+   var nowTime = +new Date() ;
+   var inputTime = +new Date(time) ;
+   var times = (inputTime - nowTime) / 1000 ;
+   var d = parseInt(times / 60 / 60 / 24) ;
+   d = d < 10 ? '0' + d : d ;
+   var h = parseInt(times / 60 / 60 % 24) ;
+   h = h < 10 ? '0' + h : h ;
+   var m = parseInt(times / 60% 60) ;
+   m = m < 10 ? '0' + m : m ;
+   var s = parseInt(times % 60) ;
+   s = s < 10 ? '0' + s : s ;
+   return d + '天' + h + '时' + m + '分' + s + '秒' ;
+}
+console.log(countDown(''));
+
+
+
+3、Array 对象（数组对象）
+
+3.1 使用 Array
+var arr = new Array(2);                        // 2 表示数组的长度为 2，里面有两个空的数组元素
+console.log(arr);                                   //输出：empty*2 空元素  
+var arr2 = new Array(2，3);                  // 当括号里的元素大于1个，等价与 [2，3]
+console.log(arr2);                                 //输出：2，3
+
+3.2、检查是否为数组
+
+方法1：数组名 instanceof Array
+var arr = [];
+var obj = {};
+console.log(arr instanceof Array);            // ture
+console.log(obj instanceof Array);           // false
+
+方法2：Array.isArray(参数);           （H5 新增的，ie9以上版本支持）
+var arr = [];
+var obj = {};
+console.log(Array.isArray(arr));;            // ture
+console.log(Array.isArray(obj));           // false
+
+3.3、添加和删除数组元素方法
+
+push（）在我们数组的末尾 添加一个或多个数组元素
+方法：数组名.push(元素)；
+如：
+var arr = [1,2,3];
+arr.push(4);
+console.log(arr.push());      //输出： 4    注意：push 完后返回的结果是 新数组的长度
+console.log(arr);                // 1,2,3,4
+
+unshift（）在我们数组的开头 添加一个或多个数组元素
+方法：数组名.unshift(元素)； 
+如：
+var arr = [2,3,4];
+arr.unshift(0,1);
+console.log(arr.unshift());      //输出： 5    注意：unshift 完后返回的结果是 新数组的长度
+console.log(arr);                // 0,1,2,3,4
+
+pop（）删除数组的最后一个元素
+方法：数组名.pop();
+如：
+var arr = [1,2,3];
+arr.pop();
+console.log(arr.pop());      //输出：3      注意：pop 完后返回的结果是 删去的元素
+console.log(arr);                // 1,2
+
+shift（）删除数组的最前一个元素
+方法：数组名.shift();
+如：
+var arr = [1,2,3];
+arr.shift();
+console.log(arr.shift());      //输出：1      注意：shift 完后返回的结果是 删去的元素
+console.log(arr);                // 2,3.
+
+3.4、翻转数组
+方法：数组名.reverse();
+
+3.5、冒泡排序
+方法：数组名.sort();
+如：
+var arr = [13,4,77,1,7];
+arr.sort(funstion(a,b) {                      //加上函数为完美写法，没加只能排序个位数
+   return a - b;                                  // 降序排列 改为 return b - a;
+});
+console.log(arr);                               // 1，4，7，13，77
+
+3.6、数组元素索引号查找
+
+方法1：数组名.indexOf(元素)；           
+如：
+var arr = ['a','b','c','d','c']
+console.log(arr.indexOf('c'));            //输出：2          注意：只返回第1个满足条件的索引号
+console.log(arr.indexOf('e'));            //输出：-1         注意：如果在数组里面没有这个元素，返回-1
+
+方法2：数组名.lastIndexOf(元素)；
+如：
+var arr = ['a','b','c','d','c']
+console.log(arr.lastIndexOf('c'));            //输出：4          注意：只返回第1个满足条件的索引号
+console.log(arr.lastIndexOf('e'));            //输出：-1         注意：如果在数组里面没有这个元素，返回-1
+
+注意：indexOf 是从前往后查找（常用），lastIndexOf 是从后往前查找，但索引号不变。
+
+案例：数组去重核心算法
+
+3.7、数组转换为字符串
+
+方法1：数组名.toString();
+如：
+var arr = [1,2,3];
+console.log(arr.toString());              //输出：1，2，3
+
+方法2：数组名.join(分隔符)；
+如：
+var arr1 = [1,2,3,4]
+console.log(arr1.join('%'));             //输出：1%2%3%4 
+
+3.8、连接多个数组，不影响原数组 concat()
+方法：数组名.concat(数组名，数组名，...);
+
+3.9、数组截取 slice（begin，end）
+方法：数组名.slice(第几个开始，到第几个);
+
+3.10、数组删除和添加 splice
+方法：数组名.splice(第几个开始，要删除几个，添加的数组元素);
+
+3.11、遍历处理数组，返回新数组
+方法：数组.map(function (ele,index){
+                        console.log(ele)//数组元素
+                        console.log(index) // 数组索引号
+                        return ele +颜色 ;
+                  })
+
+
+
+4、字符串对象
+
+4.1、基础包装类型：就是把简单数组类型 包装成为了 复杂数据类型
+如：
+var str = 'andy';
+console.log(str.length);
+
+相当于：
+（1）把简单数据类型包装成复杂数据类型
+var temp = new String('andy');
+（2）把临时变量的值 给 str
+str = temp;
+（3）摧毁临时变量
+temp = null;
+
+4.2、字符串不可变
+意义：指的是里面的值不可变，虽然看上去变了，但其实是地址变了，内存中新开辟了一个内存空间
+
+4.3、根据字符串返回位置
+方法：变量名.indexOf('字符'，[起始的位置])
+如：
+var str = '春天来了春天走了';
+console.log(str.indexOf('春',3));                      //输出：5 
+
+4.4、根据位置返回字符
+方法1：返回指定位置的字符
+            变量名.charAt(index)
+如：
+var str = 'andy';
+console.log(str.charAt(3));                               //输出：y
+
+方法2：返回指定位置字符的ASCII码（用于判断用户按了哪个键）
+           变量名.charCodeAt(index)
+如：
+var str = 'andy';
+console.log(str.charCodeAt(0));                      //输出：97       因为 a 的ASCII码为 97
+
+方法3：返回指定位置的字符（和 charAt 一样，是html5新增的）
+            变量名[index]
+如：
+var str = 'andy';
+console.log(str[3]);                                     //输出：y
+
+4.5、拼接字符串
+方法：变量名.concat('字符串1','字符串2',...)
+如：
+var str = 'andy';
+console.log(str.concat('red'));                     //输出：andyred
+
+4.6、截取字符串
+方法：变量名.substring('截取的起始位置','截取到的位置')
+
+4.7、字符串替换字符（只会替换第一个字符）
+方法：变量名.replace('要替换的字符','替换后的字符')
+如：
+var str = 'andyandy';
+console.log(str.replace('a','b'));                   //输出：bndyandy
+
+4.8、字符串转换为数组
+方法： 变量名.split('字符串中要变分隔父符的字符')
+如：
+var str = 'red&pink&blue';
+console.log(str.split('&'));                         //输出：["red","pink","blue"]
+
+4.8、字符串转换大小写
+转换大写：变量名.toUpperCase()
+转换小写：变量名.toLowerCase()
+
+ 
+
+
