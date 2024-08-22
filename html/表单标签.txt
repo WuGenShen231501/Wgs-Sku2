@@ -5,7 +5,7 @@
 2、密码框：<input type="password" name="名称"/>
 3、提交键：<input type="submit" name="名称" value="登陆"/>
 4、清空键：<input type="reset" name="名称" value="清空"/>
-5、普通键：<input type="button" name="名称" value="点击"/>                                                                                                        属性：onclick="alert('文本')"
+5、普通键：<input type="button" name="名称" value="点击"/>                                                                                                       
 6、单选框：<input type="radio" name="名称" value="男"/>男    
 7、复选框：<input type="checkbox" name="名称" value="音乐"/>音乐            属性：checked 选中状态
 8、电子邮件文本框：	     

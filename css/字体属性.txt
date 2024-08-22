@@ -47,3 +47,6 @@ white-space: nowrap;            /* 禁止文本换行 */
 
 裁减掉文字以外的背景
 -webkit-background-clip: text;
+
+空格不再省略为一个
+white-space: pre-wrap;
